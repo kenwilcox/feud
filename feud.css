@@ -1,0 +1,181 @@
+header{
+    
+margin-top:10px;
+margin-bottom:10px;
+border: 10px solid gray;
+border-radius:10px;
+background-color:white;
+height:20%;
+text-transform:uppercase;
+   
+}
+
+footer{
+    
+margin-top:5px;
+margin-bottom:5px;
+border: 5px solid rgb(110,300,50);
+height:25px;
+
+color: rgb(220,11,55);
+font-size: 0.75em;
+background-color: black;
+
+}
+
+.answer{
+    
+border: 4px solid blue;
+color:rgb(50,29,120);
+border-radius: 20px;
+background-color: orange;
+text-align: center;
+text-transform: uppercase;
+border-radius: 15px;
+margin-top: 3px;
+margin-bottom: 3px;
+font-size: 2.5em;
+height:70px;
+width: 100%;
+    
+}
+
+#team1{
+
+color:white;
+
+text-align: center;
+
+margin-top: 5px;
+margin-bottom: 5px;
+    
+}
+
+#team2{
+
+color:white;
+
+text-align: center;
+
+margin-top: 5px;
+margin-bottom: 5px;
+
+    
+}
+
+#qq{
+    
+border: 4px solid blue;
+color:white;
+background-color: black;
+text-align: center;
+
+margin-top: 3px;
+margin-bottom: 3px;
+font-size: 2.5em;
+height: 85px;
+width: 100%;
+text-transform: uppercase;
+    
+}
+
+html{
+    
+background-image:url(HIS.png);
+    
+}
+
+.house{
+    
+font-size: 2.2em;
+width: 30%;
+    
+}
+
+.cross{
+    
+font-size: 3em;
+text-transform: uppercase;
+text-align: center;
+    
+}
+
+
+
+#guessAnswer{
+    
+text-align: center;
+width: 300px;
+height: 40px;
+border:10px solid;
+border-radius:20px;
+border-image: url(HIS.png);
+font-size:1em;
+    
+}
+
+button{
+    
+width: 100px;
+height: 30px;
+border:2px solid;
+margin-top:5px;
+margin-bottom:5px;
+
+}
+
+.RED{
+    
+background-color: red;    
+    
+}
+
+.BLUE{
+    
+    
+background-color: blue;    
+    
+}
+
+.GREEN{
+    
+background-color: green;    
+    
+}
+
+.YELLOW{
+    
+background-color: yellow;    
+    
+}
+
+input{
+    
+ margin-left:auto;
+margin-right:auto;
+    
+    
+}
+#control-panel{
+height:50px;    
+margin-top:10px;    
+    
+}
+
+audio{
+    
+ display:none;   
+    
+}
+
+.score-display{
+font-size:45px;    
+text-transform: uppercase;
+color:white;    
+}
+
+.active{
+ padding:10px;   
+ border: solid black 10px;   
+    
+}
