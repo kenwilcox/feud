@@ -144,13 +144,18 @@ Green: {{greenScore}}
   
 <audio controls
   src="bell.m4a" id = "bellAudio">
-Your user agent does not support the HTML5 Audio element.
 </audio>
 <audio controls
-  src="strike.m4a" id = "strikeAudio">
-Your user agent does not support the HTML5 Audio element.
-</audio>
+  src="strike.m4a" id = "strikeAudio" preload = "auto">
 
+</audio>
+<audio controls
+  src="walk-on.m4a" id = "walkAudio" preload = "auto">
+
+</audio>
+<audio controls
+  src="background.m4a" id = "backgroundAudio" preload = "auto" loop>
+</audio>
 </template>
     
 <template  name = "questions">
@@ -165,7 +170,7 @@ Your user agent does not support the HTML5 Audio element.
     
 <template  name = "admin">
 <div class = "row" id = "control-panel">
-<div class = "col-sm-3 text-center">
+<div class = "col-sm-2 text-center">
 leftHouse:
 <select id = "leftHouse" class = "houseSelect">
 <option></option>
@@ -177,13 +182,20 @@ leftHouse:
 <p class = "text-center">Strikes:<br>
 <input type = "number" id = "leftHouse?Strikes" class = "strikes" min = "0" value = "{{currLeftStrikes}}" max = "3"> </p>       
 </div>    
-<div class = "col-sm-3 text-center">
-<p class = "text-center">Round:<br>
-<input type = "number" id = "round" min = "0" value = "0" max = "8"> </p>   
-    
-    
+<div class = "col-sm-4 text-center">
+<p class = "text-center">Round:
+<input type = "number" id = "round" min = "0" value = "0" max = "8">    
+<button id = "resetGame" class = "btn btn-primary btn-sm">Reset</button>    
+</p>    
 </div> 
-<div class = "col-sm-3 col-sm-offset-3 text-center">
+<div class = "col-sm-4">
+Music:
+<button id = "walk-on" class = "btn btn-primary btn-sm">Walk-On</button>
+<button id = "background" class = "btn btn-primary btn-sm">Background</button>
+<button id = "stop-music" class = "btn btn-danger btn-sm">Stop</button>
+    
+</div>
+<div class = "col-sm-2  text-center">
 rightHouse:
 <select id = "rightHouse" class = "houseSelect">
 <option></option>

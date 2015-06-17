@@ -31,14 +31,49 @@ if (Meteor.isClient) {
     
     gameSettings.update({_id:currTeam._id},{$set:{strikes:array}});  
     console.log(gameSettings.findOne({name:team}));
+    if($(e.target).val()>currTeam.strikes.length){
     var a = document.getElementById('strikeAudio');
         a.play()
+    }
     },
       
     'change #round':function(e){
      var currRound = gameSettings.findOne({name:'round'})._id;
    
     gameSettings.update({_id:currRound},{$set:{value:parseInt($(e.target).val())}});   
+        
+    },
+    'click #walk-on':function(e){
+     e.preventDefault();
+     var a = document.getElementById('walkAudio');
+        a.currentTime = 0;
+        a.play()
+        
+    },
+    'click #background':function(e){
+     e.preventDefault();
+     var a = document.getElementById('backgroundAudio');
+        a.currentTime = 0;
+        a.play()
+        
+    },
+    'click #stop-music':function(e){
+     e.preventDefault();
+     var a = document.getElementById('walkAudio');
+        a.pause()
+     var a = document.getElementById('backgroundAudio');
+        a.pause()   
+    },
+    'click #resetGame':function(e){
+     e.preventDefault();
+     var sure = confirm("Are you sure you want to reset the game?");
+    if(sure){
+     resetQuestions();
+     Scores.find().forEach(function(s){
+         
+     Scores.remove({_id:s._id});     
+     });
+            }
         
     }
       
@@ -141,7 +176,7 @@ return gameSettings.findOne({name:'activeTeam'}).value=='right';
     
 Template.answers.events({
 'dblclick .answer':function(e,t){
-    
+if(Session.get('isAdmin')){    
 var currSurvey = Surveys.findOne({_id:this.qid});
 var responses = currSurvey.responses;
 responses[(this.rank-1)].show=true;
@@ -158,6 +193,7 @@ house:scoringHouse.value,
 time:new Date(),
     
 })
+}
     
 },
 'mouseenter .answer':function(e){
