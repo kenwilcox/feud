@@ -36,7 +36,8 @@
 </template>
 
 <template name="summary">
-  {{>header}} {{>game}}
+  {{>header}}
+  {{>game}}
 </template>
 
 <template name="header">
@@ -63,23 +64,36 @@
 <template name="answers">
   <div class="row">
     <div class="col-md-3">
-      <div id="team1"><span class="{{leftHouse}} house {{#if leftActive}}active{{/if}}">{{leftHouse}}</span>: {{leftScore}}</div>
-      {{#each teamLX}} {{>strike}} {{/each}}
+      <div id="team1">
+        <span class="{{leftHouse}} house {{#if leftActive}}active{{/if}}">{{leftHouse}} TEAM</span>: {{leftScore}}
+      </div>
+      {{#each teamLX}} 
+        {{>strike}} 
+      {{/each}}
     </div>
 
     <div class="col-md-6">
-      {{#each responses}} {{#if this.show}}
-      <div class="answer text-center"><span class="number"> {{text}} - {{percent}}</span></div>
-      {{/if}} {{#unless this.show}}
-      <div class="answer text-center">{{rank}} {{#if canShowAdmin}}
-        <span> {{text}} - {{percent}}</span> {{/if}}
-      </div>
-      {{/unless}} {{/each}}
+      {{#each responses}} 
+        {{#if this.show}}
+        <div class="answer text-center"><span class="number"> {{text}} - {{percent}}</span></div>
+        {{/if}}
+        {{#unless this.show}}
+        <div class="answer text-center">{{rank}}
+          {{#if canShowAdmin}}
+          <span> {{text}} - {{percent}}</span>
+          {{/if}}
+        </div>
+        {{/unless}}
+      {{/each}}
     </div>
 
     <div class="col-md-3">
-      <div id="team2"><span class="{{rightHouse}} house {{#if rightActive}}active {{/if}}">{{rightHouse}}</span> {{rightScore}}</div>
-      {{#each teamRX}} {{>strike}} {{/each}}
+      <div id="team2">
+        <span class="{{rightHouse}} house {{#if rightActive}}active {{/if}}">{{rightHouse}} TEAM</span> {{rightScore}}
+      </div>
+      {{#each teamRX}}
+        {{>strike}}
+      {{/each}}
     </div>
   </div>
 
@@ -105,14 +119,15 @@
     <div class="col-sm-2 text-center">
       leftHouse:
       <select id="leftHouse" class="houseSelect">
-<option></option>
-<option>RED</option>
-<option>BLUE</option>
-<option>GREEN</option>
-<option>ORANGE</option>
-</select>
+        <option></option>
+        <option>RED</option>
+        <option>BLUE</option>
+        <option>GREEN</option>
+        <option>ORANGE</option>
+      </select>
       <p class="text-center">Strikes:<br>
-        <input type="number" id="leftHouse?Strikes" class="strikes" min="0" value="{{currLeftStrikes}}" max="3"> </p>
+        <input type="number" id="leftHouse?Strikes" class="strikes" min="0" value="{{currLeftStrikes}}" max="3">
+      </p>
     </div>
     <div class="col-sm-4 text-center">
       <p class="text-center">Round:
@@ -125,19 +140,20 @@
       <button id="walk-on" class="btn btn-primary btn-sm">Walk-On</button>
       <button id="background" class="btn btn-primary btn-sm">Background</button>
       <button id="stop-music" class="btn btn-danger btn-sm">Stop</button>
-
     </div>
+    
     <div class="col-sm-2  text-center">
       rightHouse:
       <select id="rightHouse" class="houseSelect">
-<option></option>
-<option>RED</option>
-<option>BLUE</option>
-<option>GREEN</option>
-<option>ORANGE</option>
-</select>
+        <option></option>
+        <option>RED</option>
+        <option>BLUE</option>
+        <option>GREEN</option>
+        <option>ORANGE</option>
+      </select>
       <p class="text-center">Strikes:<br>
-        <input type="number" id="rightHouse?Strikes" class="strikes" min="0" value="{{currRightStrikes}}" max="3"> </p>
+        <input type="number" id="rightHouse?Strikes" class="strikes" min="0" value="{{currRightStrikes}}" max="3">
+      </p>
     </div>
   </div>
 </template>
